@@ -8,7 +8,7 @@
 */
 #include "sha3.h"
 
-
+#include "hash.h"
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
@@ -175,7 +175,7 @@ mkapply_sd(setout, dst[i] = src[i])  // setout
 defsha3(256)
 
 
-std::string sha3_256(std::string input) {
+std::string hash(std::string input) {
 	uint8_t output[32];
 	char outputHex[65];
 
@@ -186,4 +186,12 @@ std::string sha3_256(std::string input) {
 	}	
 	return std::string(outputHex,64);
 
+}
+
+std::string hashName(){
+	return "SHA3";
+}
+
+std::string version(){
+	return "1.0.0.0";
 }
